@@ -14,13 +14,7 @@ before_install:
     - echo "$DOCKER_PASSWORD" | docker login --username "$DOCKER_USERNAME" --password-stdin
     - echo "$HEROKU_PASSWORD" | docker login --username "$HEROKU_USERNAME" --password-stdin registry.heroku.com
 
-install:
-    # install deps
-    - yarn install
-
 script:
-    - yarn test
-    - yarn build
     # build docker images
     - docker build -t mrexplorers/mr-explorer-orchestrator .
     - docker tag mrexplorers/mr-explorer-orchestrator registry.heroku.com/$HEROKU_APP_NAME/web
