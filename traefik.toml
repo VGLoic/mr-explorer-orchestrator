@@ -1,0 +1,20 @@
+[entryPoints]
+  [entryPoints.http]
+    address = ":80" # will be overriden
+
+[frontends]
+  [frontends.frontend1]
+  backend = "backend1"
+  
+  [frontends.frontend2]
+  backend = "backend2"
+    [frontends.frontend2.routes.test_1]
+      rule = "Path:/"
+  
+[backends]
+  [backends.backend1]
+    [backends.backend1.servers.server1]
+    url = "https://mr-explorer-frontend.herokuapp.com/"
+  [backends.backend2]
+    [backends.backend2.servers.server1]
+    url = "https://mr-explorer-aggregator.herokuapp.com/"
