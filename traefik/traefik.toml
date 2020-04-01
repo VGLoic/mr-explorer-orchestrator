@@ -14,7 +14,7 @@
 [backends]
   [backends.backend1]
     [backends.backend1.servers.server1]
-    url = "https://mr-explorer-frontend.herokuapp.com/"
+    url = "https://www.google.fr/"
   [backends.backend2]
     [backends.backend2.servers.server1]
-    url = "https://mr-explorer-aggregator.herokuapp.com/"
+    url = "https://www.youtube.com/"
